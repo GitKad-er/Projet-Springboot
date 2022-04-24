@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des Categories</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" >
+</head>
+<body>
+<div class="container" >
+  <h2>Liste des Categories</h2>
+  <table class="table table-stripped table-hover" >
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "Categorie:${ListCategories}">
+      <th scope="row" th:text = "${Categorie.id}"></th>
+      <td th:text="${Categorie.designation}"></td>
+      <td >
+        <a th:href="@{/Categorie/edit/{id}(id=${Categorie.id})}">Edit |</a>
+        <a th:href="@{/Categorie/delete/{id}(id=${Categorie.id})}">Delete</a>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
