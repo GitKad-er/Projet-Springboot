@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <h2>formulaire de saisie de produit </h2>
+
+    <form method="post" th:action="@{/produits/save}">
+        <div class="mb-3">
+            <label class="form-label">Categorie </label>
+            <select name="categorieId" required>
+                <option value=""> Selectionner une catégorie</option>
+                <option th:each="Categorie:${listCategories}"
+                        th:text="${Categorie.designation}"
+                        th:value="${Categorie.id}">
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">libelle produit</label>
+            <input class="form-control" name="libelle" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">quantite seuil </label>
+            <input class="form-control" min="1" name="qtSeuil" type="number">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">prix </label>
+            <input class="form-control" name="prix" type="number">
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Enregistrer">
+        </div>
+
+    </form>
+
+</div>
+<script rel="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

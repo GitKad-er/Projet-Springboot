@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<div class="container">
+    <h2>Nouvel approvisionnement </h2>
+
+    <form method="post" th:action="@{/approvisionnement/save}" th:object="${UnProduit}">
+        <div class="mb-3">
+            <label class="form-label">Produit </label>
+            <input class="form-control" min="1" readonly th:value="${UnProduit.libelle}" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">quantite </label>
+            <input class="form-control" min="1" name="qte" type="number">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="produit_id" th:value="${UnProduit.id}" type="hidden">
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Enregistrer">
+        </div>
+
+    </form>
+
+</div>
+<script rel="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>

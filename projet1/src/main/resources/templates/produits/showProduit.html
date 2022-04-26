@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Produits</title>
+    <link rel="stylesheet"  th:href="@{/css/bootstrap.min.css}"/>
+
+</head>
+<body>
+
+<div class="container">
+    <h1> Liste des produits </h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Libelle</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Date de creation</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="produits : ${listproduits}">
+            <th th:text="${produits.id}" scope="row"></th>
+            <td th:text="${produits.libelle}"></td>
+            <td th:text="${produits.qtStock}"></td>
+            <td th:text="${produits.qtSeuil}"></td>
+            <td th:text="${produits.dateCreation}"></td>
+            <td th:text="${produits.prix}"></td>
+            <td th:text="${produits.Categorie.designation}"></td>
+            <td>
+                <a th:href="@{/produits/edit/{id}(id=${produits.id})}" class="btn btn-warning">Edit</a>
+                <a th:href="@{/produits/delete/{id}(id=${produits.id})} " class="btn btn-danger">Delete </a>
+                <a th:href="@{/approvisionnement/approvisionner/{id}(id=${produits.id})} " class="btn btn-danger">Approvisionner </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script rel="text/javascript"  th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
