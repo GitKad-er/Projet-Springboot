@@ -23,6 +23,18 @@ public class ProduitService {
         return produitRepository.findAll();
     }
 
+    //Recherche de produit
+    public List<Produit> rechercheProduit(String libelle) {
+        List<Produit> optional = produitRepository.findAllByLibelle(libelle);
+        List<Produit> listeProduit = null;
+        if (optional.isEmpty()) {
+            throw new RuntimeException("Produit introuvable");
+        } else {
+            listeProduit = optional;
+        }
+        return listeProduit;
+    }
+
     //trouver un produit précis
     public Produit showOneProduit(int id) {
         Optional<Produit> optional = produitRepository.findById(id);
@@ -39,5 +51,6 @@ public class ProduitService {
     public void deleteProduit(int id) {
         produitRepository.deleteById(id);
     }
+
 
 }

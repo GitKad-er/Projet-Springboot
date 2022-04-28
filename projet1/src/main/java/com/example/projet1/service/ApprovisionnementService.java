@@ -1,6 +1,7 @@
 package com.example.projet1.service;
 
 import com.example.projet1.model.Approvisionnement;
+import com.example.projet1.model.Produit;
 import com.example.projet1.repository.ApprovisionnementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +12,13 @@ import java.util.List;
 public class ApprovisionnementService {
     @Autowired
     ApprovisionnementRepository approvisionnementRepository;
+    @Autowired
+    ProduitService produitService;
 
     public void saveApprovisionnement(Approvisionnement approvisionnement) {
+        Produit produit = produitService.showOneProduit(approvisionnement.getProduit_id());
+        produit.setQtStock(produit.getQtStock() + approvisionnement.getQte());
+        produitService.saveProduit(produit);
         approvisionnementRepository.save(approvisionnement);
     }
 

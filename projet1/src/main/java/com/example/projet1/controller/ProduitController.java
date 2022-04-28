@@ -61,6 +61,13 @@ public class ProduitController {
         return "redirect:/produits/afficher";
     }
 
+    @PostMapping("recherche")
+    public String rechercheProduit(@RequestParam("libelle") String libelle, Model model) {
+        model.addAttribute("listproduits", produitService.rechercheProduit(libelle));
+        System.out.println(produitService.rechercheProduit(libelle));
+        return "produits/showRechercheProduit";
+    }
+
 
 }
 

@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Produits</title>
-    <link rel="stylesheet"  th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
 
 </head>
 <body>
 
+
 <div class="container">
     <h1> Liste des produits </h1>
+    <div>
+        <form method="post" th:action="@{/produits/recherche}">
+            <input aria-expanded="false" name="libelle" placeholder="Recherche de produits" type="text">
+            <input class="btn btn-primary" type="submit" value="Rechercher">>
+        </form>
+    </div>
 
-    <table class="table">
+
+    <table class="table table-dark">
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Libelle</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Stock</th>
+            <th scope="col">Quantité en stock</th>
+            <th scope="col">Seuil</th>
             <th scope="col">Date de creation</th>
             <th scope="col">Prix</th>
             <th scope="col">Categorie</th>
@@ -27,7 +35,7 @@
         </thead>
         <tbody>
         <tr th:each="produits : ${listproduits}">
-            <th th:text="${produits.id}" scope="row"></th>
+            <th scope="row" th:text="${produits.id}"></th>
             <td th:text="${produits.libelle}"></td>
             <td th:text="${produits.qtStock}"></td>
             <td th:text="${produits.qtSeuil}"></td>
@@ -35,15 +43,15 @@
             <td th:text="${produits.prix}"></td>
             <td th:text="${produits.Categorie.designation}"></td>
             <td>
-                <a th:href="@{/produits/edit/{id}(id=${produits.id})}" class="btn btn-warning">Edit</a>
-                <a th:href="@{/produits/delete/{id}(id=${produits.id})} " class="btn btn-danger">Delete </a>
-                <a th:href="@{/approvisionnement/approvisionner/{id}(id=${produits.id})} " class="btn btn-danger">Approvisionner </a>
+                <a class="btn btn-warning" th:href="@{/produits/edit/{id}(id=${produits.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/produits/delete/{id}(id=${produits.id})} ">Delete </a>
+                <a class="btn btn-danger" th:href="@{/approvisionnement/approvisionner/{id}(id=${produits.id})} ">Approvisionner </a>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
 
-<script rel="text/javascript"  th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script rel="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

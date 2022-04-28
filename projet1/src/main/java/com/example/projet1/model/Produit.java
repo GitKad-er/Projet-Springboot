@@ -3,6 +3,7 @@ package com.example.projet1.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "categorie")
 @Table(name = "produits")
 public class Produit {
 
@@ -33,4 +35,7 @@ public class Produit {
 
     @OneToMany(mappedBy = "produit")
     private List<LigneVente> ligneVentes;
+
+    //ToString.Exclude();
 }
+

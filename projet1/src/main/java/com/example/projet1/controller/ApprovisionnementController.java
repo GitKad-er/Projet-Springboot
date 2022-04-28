@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
+
 @Controller
 @RequestMapping("/approvisionnement")
 public class ApprovisionnementController {
@@ -31,6 +33,7 @@ public class ApprovisionnementController {
 
     @PostMapping("/save")
     public String saveApprovisionnement(Approvisionnement approvisionnement) {
+        approvisionnement.setDateAppro(LocalDate.now());
         approvisionnementService.saveApprovisionnement(approvisionnement);
         return "redirect:/produits/afficher";
     }
