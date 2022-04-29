@@ -7,7 +7,9 @@
 </head>
 <body>
 <div class="container">
+    <h1>Informations de la vente </h1>
 
+    <h2> Liste des produits vendus </h2>
 
     <table class="table table-dark">
         <thead>
@@ -26,11 +28,17 @@
             <td th:text="${ligneventes.Produit.libelle}"></td>
             <td th:text="${ligneventes.quantite}"></td>
             <td th:text="${ligneventes.prix}"></td>
+
             <td>
                 <a class="btn btn-warning" th:href="@{/ligneventes/edit/{id}(id=${ligneventes.id})}">Edit</a>
                 <a class="btn btn-danger" th:href="@{/ligneventes/delete/{id}(id=${ligneventes.id})} ">Delete </a>
             </td>
         </tr>
+        <tr th:object="${UneVente}">
+            <td>Total</td>
+            <td th:text="${UneVente.totalVente}"></td>
+        </tr>
+
         </tbody>
     </table>
 </div>

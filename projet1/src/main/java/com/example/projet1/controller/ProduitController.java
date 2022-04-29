@@ -68,6 +68,12 @@ public class ProduitController {
         return "produits/showRechercheProduit";
     }
 
+    @GetMapping("/dessousStock")
+    public String displayProductDessousStock(Model model) {
+        model.addAttribute("listproduits", produitService.produitDessousStock());
+        return "produits/showProduitDessousStock";
+    }
+
 
 }
 

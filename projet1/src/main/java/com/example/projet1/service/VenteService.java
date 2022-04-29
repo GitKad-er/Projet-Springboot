@@ -6,6 +6,7 @@ import com.example.projet1.repository.VenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -35,6 +36,10 @@ public class VenteService {
 
     public int derniereVente() {
         return venteRepository.findByMaxid();
+    }
+
+    public List<Vente> venteSurUnePeriod(LocalDate dateAv, LocalDate dateAp) {
+        return venteRepository.findDistinctByDateVenteAfterAndDateVenteBefore(dateAv, dateAp);
     }
 
 }

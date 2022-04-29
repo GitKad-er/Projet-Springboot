@@ -52,5 +52,13 @@ public class ProduitService {
         produitRepository.deleteById(id);
     }
 
+    public List<Produit> produitDessousStock() {
+        return produitRepository.findAllDessousStock();
+    }
+
+    public List<Produit> produitDispoStock() {
+        return produitRepository.findProdDispo();
+    }
+
 
 }

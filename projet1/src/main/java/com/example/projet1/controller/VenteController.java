@@ -58,4 +58,19 @@ public class VenteController {
         return "/Ventes/formDetail";
     }
 
+    @PostMapping("venteSurUneduree")
+    public String venteSurUneduree(@RequestParam("dateAvant") LocalDate dateAvant, @RequestParam("dateApres") LocalDate dateApres, Model model) {
+        if (dateAvant.isAfter(dateApres)) {
+            dateAvant = dateApres;
+        }
+        if (dateAvant.isEqual(null)) {
+            dateAvant = LocalDate.now();
+        }
+        if (dateApres.isEqual(null)) {
+            dateApres = LocalDate.now();
+        }
+        model.addAttribute("listeventes", venteService.venteSurUnePeriod(dateAvant, dateApres));
+        return "Ventes/ventePeriode";
+    }
+
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>Liste des ventes</h2>
+    <h2>Liste des ventes sur une période</h2>
 
     <table class="table table-stripped table-hover">
         <thead>
@@ -20,7 +20,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="Vente:${ListVentes}">
+        <tr th:each="Vente:${listeventes}">
             <th scope="row" th:text="${Vente.id}"></th>
             <td th:text="${Vente.libelleVente}"></td>
             <td th:text="${Vente.totalVente}"></td>
@@ -39,17 +39,7 @@
     <form method="get" th:action="@{/Ventes/formVente}">
         <input class="btn btn-primary" type="submit" value="Ajouter une vente">
     </form>
-</div>
-<div class="container">
-    <div>
-        <h3>Ventes sur une période</h3>
-        <form method="post" th:action="@{/Ventes/venteSurUneduree}">
-            <input max="2022-04-29" name="dateAvant" type=date>
-            <input max="2022-04-29" name="dateApres" type="date">
-            <input class="btn btn-primary" type="submit" value="Ajouter une vente">
-        </form>
-    </div>
-
+    </form>
 </div>
 <script th:src="@{/js/bootstrap.bundle.min.js}" type="text/javascript"></script>
 </body>

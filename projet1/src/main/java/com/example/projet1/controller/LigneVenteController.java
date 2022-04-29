@@ -1,6 +1,7 @@
 package com.example.projet1.controller;
 
 import com.example.projet1.model.LigneVente;
+import com.example.projet1.model.Produit;
 import com.example.projet1.model.Vente;
 import com.example.projet1.service.LigneVenteService;
 import com.example.projet1.service.ProduitService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/LigneVentes")
@@ -33,7 +35,7 @@ public class LigneVenteController {
 
     @GetMapping("/selectionProduit")
     public String selectionProduit(Model model) {
-        model.addAttribute("listproduits", produitService.showProduits());
+        model.addAttribute("listproduits", produitService.produitDispoStock());
         return "LigneVentes/selectionProduit";
     }
     /*@GetMapping("/rechercheSelection")
@@ -42,19 +44,22 @@ public class LigneVenteController {
     }*/
 
     @PostMapping("save")
-    public String saveLigneVente(LigneVente ligneVente) {
-        if (ligneVente.getQuantite() < produitService.showOneProduit(ligneVente.getProduitId()).getQtStock()) {
+    public String saveLigneVente(LigneVente ligneVente, RedirectAttributes redirectAttributes) {
+        Vente vente = venteService.showOneVente(venteService.derniereVente());
+        redirectAttributes.addAttribute("idVen", vente.getId());
+        if (ligneVente.getQuantite() > produitService.showOneProduit(ligneVente.getProduitId()).getQtStock()) {
             int idProd = ligneVente.getProduitId();
-            return "approvisionnements/approvisionner/:id";
+            return "approvisionnements/approvisionner/{idVen}";
         } else {
-            ligneVente.setPrix(ligneVente.getProduit().getPrix() * ligneVente.getQuantite());
+            Produit produit = produitService.showOneProduit(ligneVente.getProduitId());
+            produit.setQtStock(produit.getQtStock() - ligneVente.getQuantite());
+            produitService.saveProduit(produit);
+            ligneVente.setPrix(produit.getPrix() * ligneVente.getQuantite());
             ligneVente.setVenteId(venteService.derniereVente());
             ligneVenteService.saveLigneVente(ligneVente);
-            int id = ligneVente.getVenteId();
-            Vente vente = venteService.showOneVente(id);
             vente.setTotalVente(ligneVenteService.sumLigneVente(vente.getId()));
             venteService.saveVente(vente);
-            return "redirect:/Ventes/details/:id";
+            return "redirect:/Ventes/details/{idVen}";
         }
 
     }
@@ -68,14 +73,15 @@ public class LigneVenteController {
 
 
     @GetMapping("delete/{id}")
-    public String deleteLigneVete(@PathVariable("id") int id) {
+    public String deleteLigneVete(@PathVariable("id") int id, RedirectAttributes redirectAttributes) {
         LigneVente ligneVente = ligneVenteService.ShowOneLigneVente(id);
+        redirectAttributes.addAttribute("idVen", ligneVente.getVenteId());
         int idVen = ligneVente.getVenteId();
         ligneVenteService.deleteALigneVente(id);
         Vente vente = venteService.showOneVente(idVen);
         vente.setTotalVente(ligneVenteService.sumLigneVente(vente.getId()));
         venteService.saveVente(vente);
-        return "redirect:/Ventes/details/:idVen";
+        return "redirect:/Ventes/details/{idVen}";
     }
 
     @PostMapping("recherche")

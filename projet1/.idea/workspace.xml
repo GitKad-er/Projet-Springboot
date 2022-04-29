@@ -4,23 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b072d4f-8695-400c-ad30-5eb5e62a0168" name="Default Changelist" comment="V2.2.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/LigneVenteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/formLigneVente.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/rechercheSelection.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/selectionProduit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="4b072d4f-8695-400c-ad30-5eb5e62a0168" name="Default Changelist" comment="V2.3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/LigneVenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/LigneVenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/ProduitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/ProduitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/VenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/VenteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/model/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/model/Produit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/ProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/ProduitRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/VenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/VenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/ProduitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/VenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/VenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Categorie/showCategorie.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Categorie/showCategorie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/formDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/formEditVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formEditVente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/formVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formVente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/showVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/showVente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/formLigneVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/formLigneVente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Ventes/showVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/showVente.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651112745063</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="V2.3">
+      <created>1651220234007</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651220234007</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,7 +210,8 @@
     <MESSAGE value="V2.1" />
     <MESSAGE value="V2.2" />
     <MESSAGE value="V2.2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="V2.2.1" />
+    <MESSAGE value="V2.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
