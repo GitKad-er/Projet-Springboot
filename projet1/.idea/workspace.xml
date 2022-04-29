@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b072d4f-8695-400c-ad30-5eb5e62a0168" name="Default Changelist" comment="V2.2">
+    <list default="true" id="4b072d4f-8695-400c-ad30-5eb5e62a0168" name="Default Changelist" comment="V2.2.1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/LigneVenteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/formLigneVente.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/rechercheSelection.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/LigneVentes/selectionProduit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/model/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/model/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/VenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/controller/VenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/model/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/model/Produit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/ProduitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/ProduitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/VenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/repository/VenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/VenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projet1/service/VenteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Categorie/showCategorie.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Categorie/showCategorie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/produits/showProduit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/produits/showProduit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/formDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/formEditVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formEditVente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/formVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/formVente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Vente/showVente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ventes/showVente.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +103,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Projet1Application">
     <configuration name="Projet1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.projet1.Projet1Application" />
       <module name="projet1" />
@@ -105,9 +117,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="templates in projet1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projet1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="templates.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="templates" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Projet1Application" />
+        <item itemvalue="JUnit.templates in projet1" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651110586154</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="V2.2.1">
+      <created>1651112745063</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651112745063</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,7 +208,8 @@
     <MESSAGE value="V2" />
     <MESSAGE value="V2.1" />
     <MESSAGE value="V2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="V2.2" />
+    <MESSAGE value="V2.2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.2.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

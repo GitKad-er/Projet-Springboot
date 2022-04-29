@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = "categorie")
+@ToString(exclude = {"categorie", "approvisionnements", "ligneVentes"})
 @Table(name = "produits")
 public class Produit {
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping(value = "/ventes")
+@RequestMapping(value = "/Ventes")
 public class VenteController {
 
     @Autowired
@@ -22,35 +22,40 @@ public class VenteController {
     @GetMapping("/afficher")
     public String displayProduct(Model model) {
         model.addAttribute("listeVentes", venteService.showVentes());
-        return "vente/showVente";
+        return "Ventes/showVente";
+    }
+
+    @GetMapping("/formVente")
+    public String formVente() {
+        return "Ventes/formVente";
     }
 
     @PostMapping("/save")
     public String saveVente(Vente vente) {
-        vente.setTotalVente(ligneVenteService.sumLigneVente(vente.getId()));
+        //vente.setTotalVente(ligneVenteService.sumLigneVente(vente.getId()));
         vente.setDateVente(LocalDate.now());
         venteService.saveVente(vente);
-        return "redirect:/ventes/afficher";
+        return "redirect:/LigneVentes/selectionProduit";
 
     }
 
     @GetMapping("edit/{id}")
     public String FormEditVente(@PathVariable("id") int id, Model model) {
         model.addAttribute("UneVente", venteService.showOneVente(id));
-        return "/vente/formEdit";
+        return "/Ventes/formEdit";
     }
 
     @PostMapping("/edit")
     public String editVente(@ModelAttribute("vente") Vente vente) {
         venteService.saveVente(vente);
-        return "redirect:/ventes/afficher";
+        return "redirect:/Ventes/afficher";
     }
 
     @GetMapping("details/{id}")
     public String FormDetailVente(@PathVariable("id") int id, Model model) {
         model.addAttribute("UneVente", venteService.showOneVente(id));
         model.addAttribute("listesVentes", ligneVenteService.showLigneVenteParVente(id));
-        return "/vente/formDetail";
+        return "/Ventes/formDetail";
     }
 
 }

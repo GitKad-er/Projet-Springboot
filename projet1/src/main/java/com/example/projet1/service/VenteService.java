@@ -33,4 +33,8 @@ public class VenteService {
         venteRepository.deleteById(id);
     }
 
+    public int derniereVente() {
+        return venteRepository.findByMaxid();
+    }
+
 }

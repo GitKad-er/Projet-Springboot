@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Ventes</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Liste des ventes</h2>
+
+    <table class="table table-stripped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Libelle</th>
+            <th scope="col">Prix total</th>
+            <th scope="col">Date de la vente</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Vente:${ListVentes}">
+            <th scope="row" th:text="${Vente.id}"></th>
+            <td th:text="${Vente.libelleVente}"></td>
+            <td th:text="${Vente.totalVente}"></td>
+            <td th:text="${Vente.dateVente}"></td>
+            <td>
+                <a th:href="@{/Ventes/edit/{id}(id=${Vente.id})}">Edit |</a>
+                <a th:href="@{/Ventes/delete/{id}(id=${Vente.id})}">Delete</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+<div class="container">
+    <form method="get" th:action="@{/Ventes/formVente}">
+        <input class="btn btn-primary" type="submit" value="Ajouter une vente">
+    </form>
+</form>
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}" type="text/javascript"></script>
+</body>
+</html>

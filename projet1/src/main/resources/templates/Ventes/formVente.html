@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vente</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Enregistrement d'une vente</h2>
+    <form method="post" th:action="@{/Ventes/save}">
+        <div class="mb-3">
+            <label class="form-label">Libelle</label>
+            <input class="form-control" name="libelleVente" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Enregistrer</button>
+    </form>
+
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}" type="text/javascript"></script>
+</body>
+</html>

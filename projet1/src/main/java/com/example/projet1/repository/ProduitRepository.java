@@ -14,4 +14,5 @@ public interface ProduitRepository extends JpaRepository<Produit, Integer> {
     @Query("select distinct p from Produit p where p.libelle like concat('%', :libelle, '%')")
     List<Produit> findAllByLibelle(@Param("libelle") String libelle);
 
+
 }
