@@ -15,4 +15,6 @@ public interface VenteRepository extends JpaRepository<Vente, Integer> {
 
     @Query("select max(id) from Vente ")
     int findByMaxid();
+
+
 }

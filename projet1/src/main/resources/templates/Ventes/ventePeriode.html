@@ -30,6 +30,10 @@
                 <a th:href="@{/Ventes/delete/{id}(id=${Vente.id})}">Delete</a>
             </td>
         </tr>
+        <tr th:object="${UneVente}">
+            <td>Total</td>
+            <td th:text="${UneVente.totalVente}"></td>
+        </tr>
 
         </tbody>
     </table>

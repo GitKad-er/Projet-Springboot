@@ -69,7 +69,9 @@ public class VenteController {
         if (dateApres.isEqual(null)) {
             dateApres = LocalDate.now();
         }
+
         model.addAttribute("listeventes", venteService.venteSurUnePeriod(dateAvant, dateApres));
+        
         return "Ventes/ventePeriode";
     }
 

@@ -25,4 +25,9 @@ public class Vente {
     @OneToMany(mappedBy = "vente")
     private List<LigneVente> ligneVentes;
 
+    @ManyToOne()
+    @JoinColumn(name = "userId", insertable = false, updatable = false)
+    private User user;
+    private int userId;
+
 }
